@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.ralph-schuster</groupId>
+		<artifactId>pom-oss</artifactId>
+		<version>1.4.1</version>
+	</parent>
+
+	<properties>
+		<rsbaselib.version>1.2.9-SNAPSHOT</rsbaselib.version>
+	</properties>
+
+	<artifactId>commons-feedparser</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<url>http://techblog.ralph-schuster.eu/commons-feedparser/</url>
+	<name>Commons Feedparser Fork</name>
+	<description>A fork of Commons Feedparser project (dormant at Apache Commons)</description>
+
+	<scm>
+		<connection>scm:svn:https://svn.ralph-schuster.eu/svn/OSS/eu.ralph-schuster.commons-feedparser/trunk</connection>
+		<developerConnection>scm:svn:https://svn.ralph-schuster.eu/svn/OSS/eu.ralph-schuster.commons-feedparser/trunk</developerConnection>
+		<url>https://svn.ralph-schuster.eu/svn/OSS/eu.ralph-schuster.commons-feedparser/trunk</url>
+	</scm>
+
+	<distributionManagement>
+		<site>
+			<id>strato-server</id>
+			<url>scp://download.ralph-schuster.eu/var/www/ralph-schuster.eu/download/${project.groupId}.${project.artifactId}/${project.version}</url>
+		</site>
+	</distributionManagement>
+
+	<issueManagement>
+		<system>Jira</system>
+		<url>http://jira.ralph-schuster.eu/browse/CFP</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>bamboo</system>
+		<url>http://bamboo.ralph-schuster.eu/browse/CFP</url>
+	</ciManagement>
+
+	<developers>
+		<developer>
+			<id>ralph</id>
+			<name>Ralph Schuster</name>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>eu.ralph-schuster</groupId>
+			<artifactId>baselib</artifactId>
+			<version>${rsbaselib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>b9</version>
+		</dependency>
+		<dependency>
+			<groupId>xmlrpc</groupId>
+			<artifactId>xmlrpc</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>saxpath</groupId>
+			<artifactId>saxpath</artifactId>
+			<version>1.0-FCS</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1-beta-6</version>
+		</dependency>
+	</dependencies>
+
+</project>
