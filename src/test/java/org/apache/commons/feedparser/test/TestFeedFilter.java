@@ -26,6 +26,8 @@ import org.apache.commons.feedparser.FeedParser;
 import org.apache.commons.feedparser.FeedParserFactory;
 import org.apache.commons.feedparser.impl.DebugFeedParserListener;
 
+import rs.baselib.io.FileFinder;
+
 /**
  *
  * @author <a href="mailto:burton@peerfear.org">Kevin A. Burton</a>
@@ -51,7 +53,7 @@ public class TestFeedFilter extends TestCase {
 
         System.out.println( "resource: (" + current + ") " + resource );
 
-        URL url = new URL( resource );
+        URL url = FileFinder.find(getClass(), resource);
 
         FileOutputStream fos = new FileOutputStream( "/tmp/test-feed-filter-" + current + ".html" );
 
@@ -72,28 +74,28 @@ public class TestFeedFilter extends TestCase {
     }
 
     public void test1() throws Exception {
-        String path = "file:" + feedparserHome;
+        String path = "";
 
-        doTest( path + "tests/feeds/rss-1.0-EUC-JP.rdf" );
+        doTest( path + "feeds/rss-1.0-EUC-JP.rdf" );
 
-        doTest( path + "tests/filter/nbsp-1.xml" );
+        doTest( path + "filter/nbsp-1.xml" );
 
-        doTest( path + "tests/filter/entity-atom-1.xml" );
+        doTest( path + "filter/entity-atom-1.xml" );
 
-        doTest( path + "tests/filter/prolog-atom-1.xml" );
-        doTest( path + "tests/filter/prolog-atom-2.xml" );
-        doTest( path + "tests/filter/prolog-opml-1.xml" );
+        doTest( path + "filter/prolog-atom-1.xml" );
+        doTest( path + "filter/prolog-atom-2.xml" );
+        doTest( path + "filter/prolog-opml-1.xml" );
 
-        doTest( path + "tests/filter/lisa.opml" );
+        doTest( path + "filter/lisa.opml" );
 
-        doTest( path + "tests/feeds/utf16.rss1" );
-        doTest( path + "tests/feeds/utf16.rss2" );
-        doTest( path + "tests/feeds/i18n.atom" );
-        doTest( path + "tests/feeds/utf16.atom" );
+        doTest( path + "feeds/utf16.rss1" );
+        doTest( path + "feeds/utf16.rss2" );
+        doTest( path + "feeds/i18n.atom" );
+        doTest( path + "feeds/utf16.atom" );
 
-        doTest( path + "tests/feeds/atom-1.xml" );
-        doTest( path + "tests/feeds/rss-1.0-EUC-JP.rdf" );
-        doTest( path + "tests/feeds/rss-1.0-international-1.rdf" );
+        doTest( path + "feeds/atom-1.xml" );
+        doTest( path + "feeds/rss-1.0-EUC-JP.rdf" );
+        doTest( path + "feeds/rss-1.0-international-1.rdf" );
 
     }
 
