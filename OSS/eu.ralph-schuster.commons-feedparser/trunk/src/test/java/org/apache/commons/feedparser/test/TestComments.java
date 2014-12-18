@@ -16,6 +16,8 @@
 
 package org.apache.commons.feedparser.test;
 
+import rs.baselib.io.FileFinder;
+
 
 /**
  *
@@ -30,7 +32,7 @@ public class TestComments extends BaseTestCase {
 
     public void test1() throws Exception {
 
-        String resource = "file:tests/feeds/wordpress-comments.rss";
+        String resource = FileFinder.find(getClass(), "feeds/wordpress-comments.rss").toString();
 
         String output = captureOutputFromTest( resource );
 

@@ -27,6 +27,8 @@ import org.apache.commons.feedparser.FeedParserState;
 import org.apache.commons.feedparser.network.ResourceRequest;
 import org.apache.commons.feedparser.network.ResourceRequestFactory;
 
+import rs.baselib.io.FileFinder;
+
 /**
  *
  * @author <a href="mailto:burton@peerfear.org">Kevin A. Burton</a>
@@ -97,7 +99,7 @@ public class TestAtom extends TestCase {
        //String resource = "file:///projects/feedparser/src/java/org/apache/commons/feedparser/test/TestAtom.xml";
        
        //doTest( resource );
-       doTest( "file:tests/feeds/atom-1.xml" );
+       doTest( FileFinder.find(getClass(), "feeds/atom-1.xml").toString() );
     
    }
 

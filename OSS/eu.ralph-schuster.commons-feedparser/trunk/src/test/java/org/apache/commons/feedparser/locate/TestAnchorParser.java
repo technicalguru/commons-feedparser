@@ -22,6 +22,8 @@ import junit.framework.TestCase;
 import org.apache.commons.feedparser.network.ResourceRequest;
 import org.apache.commons.feedparser.network.ResourceRequestFactory;
 
+import rs.baselib.io.FileFinder;
+
 /**
  *
  * @author <a href="mailto:burton@openprivacy.org">Kevin A. Burton</a>
@@ -34,7 +36,7 @@ public class TestAnchorParser extends TestCase {
     
     private void doTest( int linkCount, String resource ) throws Exception {
 
-        ResourceRequest request = ResourceRequestFactory.getResourceRequest( resource );
+        ResourceRequest request = ResourceRequestFactory.getResourceRequest( FileFinder.find(getClass(), resource) );
         String content = request.getInputStreamAsString();
 
         TestAnchorParserListener listener = new TestAnchorParserListener();
@@ -88,11 +90,11 @@ public class TestAnchorParser extends TestCase {
 
     public void testContent() throws Exception {
 
-        doTest( 1, "file:tests/anchor/anchor4.html" );
-        doTest( 1, "file:tests/anchor/anchor1.html" );
-        doTest( 1, "file:tests/anchor/anchor2.html" );
-        doTest( 1, "file:tests/anchor/anchor3.html" );
-        doTest( 418, "file:tests/anchor/anchor5.html" );
+        doTest( 1, "anchor/anchor4.html" );
+        doTest( 1, "anchor/anchor1.html" );
+        doTest( 1, "anchor/anchor2.html" );
+        doTest( 1, "anchor/anchor3.html" );
+        doTest( 418, "anchor/anchor5.html" );
 
         //FIXME: don't find anchors in comments.
         //doTest( 0, "file:tests/anchor/anchor6.html" );

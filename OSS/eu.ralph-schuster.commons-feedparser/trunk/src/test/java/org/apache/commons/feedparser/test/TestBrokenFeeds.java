@@ -16,6 +16,8 @@
 
 package org.apache.commons.feedparser.test;
 
+import rs.baselib.io.FileFinder;
+
 
 /**
  *
@@ -36,7 +38,7 @@ public class TestBrokenFeeds extends BaseTestCase {
      */
     public void testNoContent1() throws Exception {
 
-        String resource = "file:tests/feeds/zawodny-broken-content.rss2";
+        String resource = FileFinder.find(getClass(), "feeds/zawodny-broken-content.rss2").toString();
 
         String output = captureOutputFromTest( resource );
 
